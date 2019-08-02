@@ -6,30 +6,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Contact form</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="/css.css">
 </head>
 
 <body>
+    <div class="form-container">
+        <form action="#" method="post">
+            <fieldset>
+                <legend>Contact info</legend>
+                <label for="name">Name:</label><br>
+                <input name="name" id="name" accesskey="a" tabindex="1">
+                <br>
+                <label for="email">Email:</label>
+                <br>
+                <input name="email" id="email" accesskey="m" tabindex="2">
+            </fieldset>
+            <br>
+            <fieldset>
+                <legend> Reason for contacting</legend>
+                <p>I would like to</p>
+                <input type="checkbox" name="question" id="question" value="question" accesskey="q" tabindex="3">
+                <label for="question">Ask a question</label><br>
+                <input type="checkbox" name="suggest" id="suggest" value="suggest" accesskey="s" tabindex="4">
+                <label for="suggest">Suggest a feature</label><br>
+                <input type="checkbox" name="feedback" id="feedback" value="feedback" accesskey="e" tabindex="5">
+                <label for="feedback">Submit feedback</label><br>
 
-    <form action="#" method="post">
-        <label for="name">Name:</label><br>
-        <input name="name" id="name">
-        <br>
-        <label for="email">Email:</label>
-        <br>
-        <input name="email" id="email">
-        <br>
-        <p>Would say Raf is</p>
-        <input type="checkbox" name="handsome" id="handsome" value="handsome">
-        <label for="handsome">Handsome</label><br>
-        <input type="checkbox" name="charming" id="charming" value="charming">
-        <label for="charming">Charming</label><br>
-        <input type="checkbox" name="mesmerising" id="mesmerising" value="mesmerising">
-        <label for="mesmerising">Mesmerising</label><br>
+                <p>I would like to be contacted about my question.</p>
+                <p><input type="radio" name="contact" id="Yes" value="Yes" accesskey="y" tabindex="6"> Yes </p>
+                <p><input type="radio" name="contact" id="No" value="No" accesskey="n" tabindex="7"> No</p>
+            </fieldset>
 
-
-    </form>
-
+        </form>
+    </div>
 </body>
 
 </html>
