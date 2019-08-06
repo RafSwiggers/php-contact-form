@@ -3,6 +3,51 @@ $contact = $_POST["contact"];
 $email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
 $name = filter_var($_POST['name'], FILTER_SANITIZE_EMAIL);
 $text = filter_var($_POST['text'], FILTER_SANITIZE_EMAIL);
+function Mailer() {
+    require_once "vendor/autoload.php";
+
+$mail = new PHPMailer;
+
+//Enable SMTP debugging. 
+$mail->SMTPDebug = 3;                               
+//Set PHPMailer to use SMTP.
+$mail->isSMTP();            
+//Set SMTP host name                          
+$mail->Host = "smtp.gmail.com";
+//Set this to true if SMTP host requires authentication to send email
+$mail->SMTPAuth = true;                          
+//Provide username and password     
+$mail->Username = "wynkoerier@gmail.com";                 
+$mail->Password = "Captain1988!";                           
+//If SMTP requires TLS encryption then set it
+$mail->SMTPSecure = "tls";                           
+//Set TCP port to connect to 
+$mail->Port = 587;                                   
+
+$mail->From = "wynkoerier@gmail.com";
+$mail->FromName = "Full Name";
+
+$mail->addAddress("rafswiggers@gmail.com", "Recepient Name");
+
+$mail->isHTML(true);
+
+$mail->Subject = "Subject Text";
+$mail->Body = "<i>Mail body in HTML</i>";
+$mail->AltBody = "This is the plain text version of the email content";
+
+if(!$mail->send()) 
+{
+    echo "Mailer Error: " . $mail->ErrorInfo;
+} 
+else 
+{
+    echo "Message has been sent successfully";
+}
+
+}
+
+
+
 ?>
 
 <html>
@@ -19,6 +64,7 @@ if($text){
     if(filter_var($email, FILTER_VALIDATE_EMAIL)){
     if ($contact) {
         echo "<div class='alert alert-danger text-center'><p> Thank you so much for filling in our contact form. We will get back to you as soon as possible!</p></div>";
+        Mailer();
     } else {
         echo "<div class='alert alert-danger text-center'><p>Thank you for your time and effort. We appreciate your feedback and will take it to heart! </p></div>";
     }
@@ -68,3 +114,4 @@ if($text){
 
 </form>
 </div>
+
