@@ -58,7 +58,7 @@ $email_body = "Hello owner of this webiste, you have recieved a message from $na
           $mail->Host       = 'smtp.gmail.com';  // Specify main and backup SMTP servers
           $mail->SMTPAuth   = true;                                   // Enable SMTP authentication
           $mail->Username   = 'wynkoerier@gmail.com';                     // SMTP username
-          $mail->Password   = 'Helios12!';                               // SMTP password
+          $mail->Password   = '1234!';                               // SMTP password
           $mail->SMTPSecure = 'tls';                                  // Enable TLS encryption, `ssl` also accepted
           $mail->Port       = 587;                                    // TCP port to connect to
           //Recipients
