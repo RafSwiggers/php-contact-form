@@ -63,7 +63,7 @@ $email_body = "Hello owner of this webiste, you have recieved a message from $na
           $mail->Port       = 587;                                    // TCP port to connect to
           //Recipients
           $mail->setFrom($clientEmail, $name);
-          $mail->addAddress('example@gmail.com', 'exampledude');     // Add a recipient
+          $mail->addAddress('examplemail@gmail.com', 'exampledude');     // Add a recipient
           // Content
           $mail->isHTML(true);                                  // Set email format to HTML
           $mail->Subject = $email_subject;
